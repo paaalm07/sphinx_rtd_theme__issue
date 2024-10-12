@@ -44,7 +44,9 @@ features = ["dev"]
 dependencies = [
     # docs
     "sphinx",
-    "sphinx_rtd_theme",
+    "sphinx_rtd_theme",  # "display_version" option depreciated since version 3.0.0
+    "sphinx-copybutton",
+    "myst-parser",
 ]
 
 
