@@ -1,6 +1,5 @@
-from __future__ import annotations__
-
 class DUMMY:
+    """Dummy class."""
     def __init__(self):
         pass
 
