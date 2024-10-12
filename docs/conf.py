@@ -17,8 +17,7 @@ from DUMMY.version import __version__
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "Dummy"
-copyright = "2024, paaalm07"
-copyright = f"{datetime.datetime.now(tz=datetime.timezone.utc).year}, Alfred Paar"
+copyright = f"{datetime.datetime.now(tz=datetime.timezone.utc).year}, paaalm07"
 
 version = release = __version__
 
