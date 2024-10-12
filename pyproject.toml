@@ -1,0 +1,58 @@
+[build-system]
+# See https://pypi.org/project/hatchling/
+requires = ["hatchling", "hatch-vcs>=0.3"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "DUMMY"
+dynamic = ["version"]
+description = "DUMMY"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name="Your Name", email="you@example.com"}
+]
+
+dependencies = [
+    "cowsay",
+]
+
+[project.optional-dependencies]
+dev = []
+
+#########
+# Hatch #
+#########
+[tool.hatch]
+build.dev-mode-dirs = ["src"]
+build.targets.sdist.packages = ["src"]
+build.targets.wheel.packages = ["src/DUMMY"]
+build.hooks.vcs.version-file = "src/DUMMY/version.py"
+version.source = "vcs"  # dyn. calculate version from GIT tags
+
+[tool.hatch.envs.hatch-uv]
+dependencies = [
+  "uv>=0.2.25",
+]
+
+
+[tool.hatch.envs.default]
+installer = "uv"
+python = "3.11"
+features = ["dev"]
+dependencies = [
+    # docs
+    "sphinx",
+    "sphinx_rtd_theme",
+]
+
+
+[tool.hatch.envs.default.scripts]
+
+dev = [
+    "hatch build",
+    "{env:HATCH_UV} pip install -e .[dev]",
+]
+
+docs = "sphinx-build -b html docs/ docs/_build"
