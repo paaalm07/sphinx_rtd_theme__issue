@@ -6,7 +6,7 @@ Setup description for issue reproduction.
 
 - Install [Hatch](https://hatch.pypa.io/) as python manager:
     - No python/pip installed (Windows): ```msiexec /passive /i https://github.com/pypa/hatch/releases/latest/download/hatch-x64.msi```
-    - Set global hatch config: ```hatch config set dirs.env.virtual .hatch``
+    - Set global hatch config: ```hatch config set dirs.env.virtual .hatch```
         - Note: to create a .hatch directory in project root
 
 ## Toolchain RaspberryPi
